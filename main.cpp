@@ -4,6 +4,7 @@
 #include <ostream>
 #include <string>
 #include <unicode/display_width.hpp>
+#include <gflags/gflags.h>
 
 const char TOP_BAR = '_';
 const char BOTTOM_BAR = '-';
@@ -27,12 +28,11 @@ void say(const std::string &input, std::ostream &os) {
   os << COW << NEW_LINE;
 }
 
-int main(int argc, char *argv[]) {
-  if (argc != 2) {
-    std::cerr << "Expected at least 1 text." << std::endl;
-    std::exit(1);
-  }
+DEFINE_string(quote, "", "Cowsay think..");
 
-  say(std::string(argv[1]), std::cout);
+int main(int argc, char *argv[]) {
+  gflags::SetUsageMessage("cowsay --quote [message]");
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
+  say(FLAGS_quote, std::cout);
   return 0;
 }

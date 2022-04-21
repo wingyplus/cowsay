@@ -7,6 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(LibUnicodeDisplayWidth REQUIRED)
+find_package(LibGoogleGFlags REQUIRED COMPONENTS nothread_static)
 
 add_executable(cowsay main.cpp)
-target_link_libraries(cowsay UnicodeDisplayWidth::UnicodeDisplayWidth)
+target_link_libraries(cowsay UnicodeDisplayWidth::UnicodeDisplayWidth gflags::gflags)
