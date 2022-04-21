@@ -9,4 +9,4 @@ set(CMAKE_CXX_STANDARD 20)
 find_package(LibUnicodeDisplayWidth REQUIRED)
 
 add_executable(cowsay main.cpp)
-target_link_libraries(cowsay unicode_display_width)
+target_link_libraries(cowsay UnicodeDisplayWidth::UnicodeDisplayWidth)
