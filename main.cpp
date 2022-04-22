@@ -7,11 +7,11 @@
 #include <string>
 #include <unicode/display_width.hpp>
 
-const char TOP_BAR = '_';
-const char BOTTOM_BAR = '-';
-const char NEW_LINE = '\n';
-const char SPACE = ' ';
-const char COW[] =
+static const char TOP_BAR = '_';
+static const char BOTTOM_BAR = '-';
+static const char NEW_LINE = '\n';
+static const char SPACE = ' ';
+static const char COW[] =
     "        \\    ^__^\n"
     "         \\   (@e)\\_______\n"
     "             (__)\\       )\\/\\\n"
@@ -22,8 +22,8 @@ struct CowComponent {
   std::string eyes;
 };
 
-void say(std::ostream &os, const std::string &input,
-         const CowComponent &component) {
+static void say(std::ostream &os, const std::string &input,
+                const CowComponent &component) {
   auto len = unicode::display_width(input);
   std::string top_bar(len + 2, TOP_BAR);
   std::string bottom_bar(len + 2, BOTTOM_BAR);
