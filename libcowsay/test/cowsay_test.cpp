@@ -3,8 +3,6 @@
 #include <cowsay/cowsay.h>
 #include <gtest/gtest.h>
 
-#include <sstream>
-
 TEST(Cowsay, say_print_text) {
   const std::string expected =
       " _______\n"
