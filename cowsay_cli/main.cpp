@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-#include <gflags/gflags.h>
+#include "gflags/gflags.h"
 
 #include <iostream>
 #include <ostream>
 #include <string>
-#include <unicode/display_width.hpp>
+#include "unicode/display_width.hpp"
 
 static const char TOP_BAR = '_';
 static const char BOTTOM_BAR = '-';
